@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: cirfood-forecast
+    env: docker
+    plan: free
+    dockerfilePath: ./Dockerfile
+    envVars:
+      - key: DATA_DIR
+        value: /app/data
+      - key: ARTIFACTS_DIR
+        value: /app/artifacts
+      - key: FREQUENCY
+        value: W
+      - key: HORIZON
+        value: 8
