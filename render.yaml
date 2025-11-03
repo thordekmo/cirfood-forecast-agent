@@ -1,15 +1,8 @@
 services:
   - type: web
     name: cirfood-forecast
-    env: docker
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn forecast_service:app --host 0.0.0.0 --port $PORT
     plan: free
-    dockerfilePath: ./Dockerfile
-    envVars:
-      - key: DATA_DIR
-        value: /app/data
-      - key: ARTIFACTS_DIR
-        value: /app/artifacts
-      - key: FREQUENCY
-        value: W
-      - key: HORIZON
-        value: 8
+    autoDeploy: true
