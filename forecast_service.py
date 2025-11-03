@@ -229,7 +229,8 @@ def model_registry():
     files.sort()
     with open(os.path.join(ARTIFACTS_DIR, files[-1])) as f:
         return json.load(f)
-        @app.get("/")
+
+@app.get("/")
 def root():
     return {
         "message": "Benvenuto nella CIRFOOD Forecast API! Il servizio è attivo.",
