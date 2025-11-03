@@ -1,0 +1,14 @@
+diff --git a/render.yaml b/render.yaml
+new file mode 100644
+index 0000000..1111111
+--- /dev/null
++++ b/render.yaml
+@@
++services:
++  - type: web
++    name: cirfood-forecast
++    env: python
++    buildCommand: pip install -r requirements.txt
++    startCommand: uvicorn forecast_service:app --host 0.0.0.0 --port $PORT
++    plan: free
++    autoDeploy: true
